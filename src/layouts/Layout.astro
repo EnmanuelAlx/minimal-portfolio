@@ -95,4 +95,18 @@ const { title } = Astro.props;
   ::-webkit-scrollbar-track {
     background-color: transparent;
   }
+
+  .print {
+    display: none !important;
+  }
+
+  @media print {
+    .print {
+      display: block !important;
+    }
+
+    .no-print {
+      display: none !important;
+    }
+  }
 </style>
