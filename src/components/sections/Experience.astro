@@ -1,1 +1,69 @@
-<h2>Experience</h2>
+---
+import { work } from '@cv/en_cv.json';
+---
+
+<ul>
+  {
+    work.map(({ name, startDate, endDate, position, summary, highlights }) => {
+      const startDateString = new Date(startDate).toLocaleDateString('en-US', {
+        month: 'short',
+        year: 'numeric',
+      });
+      const endDateString = endDate
+        ? new Date(endDate).toLocaleDateString('en-US', {
+            month: 'short',
+            year: 'numeric',
+          })
+        : 'Current';
+      return (
+        <li>
+          <article>
+            <header>
+              <div>
+                <h3>{name}</h3>
+                <h4>{position}</h4>
+              </div>
+              <time>
+                {startDateString} - {endDateString}
+              </time>
+            </header>
+            <footer>
+              {' '}
+              <p>{summary}</p>
+            </footer>
+          </article>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  article h3 {
+    font-weight: 500;
+    color: #111
+  }
+
+  article  h4 {
+    color: #222
+    font-weight: 400;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  time {
+    font-size: 0.85rem;
+    color: #555;
+  }
+</style>
