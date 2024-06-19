@@ -95,20 +95,20 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   h2 {
     color: #444;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-wrap: balance;
   }
 
   img {
     aspect-ratio: 1/ 1;
     object-fit: cover;
-    width: 128px;
+    width: 110px;
     border-radius: 16px;
   }
 
@@ -146,5 +146,11 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
   footer a:hover {
     background-color: #eee;
     border: 1px solid #ddd;
+  }
+
+  @media (max-width: 340px) {
+    .info {
+      max-width: 150px;
+    }
   }
 </style>

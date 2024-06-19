@@ -9,10 +9,13 @@ import Layout from '@/layouts/Layout.astro';
 
 import KeyboardManager from '@/components/KeyboardManager.astro';
 import Section from '@/components/Section.astro';
+
+import { basics } from '@cv/en_cv.json';
+const { name, label } = basics;
 ---
 
-<Layout title='Minimalist Resume'>
-  <main>
+<Layout title={`Resume of ${name} - ${label}`}>
+  <main class='container'>
     <Section><Hero /></Section>
     <Section title='About'><About /></Section>
     <Section title='Experience'><Experience /></Section>
@@ -23,4 +26,15 @@ import Section from '@/components/Section.astro';
   </main>
 </Layout>
 
-<style></style>
+<style>
+  .container {
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding: 3rem;
+    }
+  }
+</style>
