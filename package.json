@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.7.0",
     "@fontsource-variable/inter": "^5.0.18",
+    "@fontsource-variable/jetbrains-mono": "^5.0.21",
     "astro": "^4.10.3",
     "ninja-keys": "^1.2.2",
     "typescript": "^5.4.5"
