@@ -1,8 +1,11 @@
 ---
 import type { Resume } from '@/content/config';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 
 const { data } = Astro.props;
 const { education } = data as Resume;
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang);
 ---
 
 <ul>
@@ -17,7 +20,7 @@ const { education } = data as Resume;
             month: 'short',
             year: 'numeric',
           })
-        : 'Current';
+        : t('currentDateString');
       return (
         <li>
           <article>
