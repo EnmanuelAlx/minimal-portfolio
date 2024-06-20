@@ -23,6 +23,9 @@ export const ui = {
     'hero.socialFollowing': 'profile at the following link:',
     currentDateString: 'Current',
     remoteString: 'Remote',
+    'projects.sourceCode': 'See the',
+    'projects.sourceCodeFollowing': ' source code.',
+    'projects.link': 'See the project',
   },
   es: {
     title: 'Currículum de',
@@ -41,5 +44,8 @@ export const ui = {
     'hero.socialFollowing': 'en el siguiente enlace:',
     currentDateString: 'Actual',
     remoteString: 'Remoto',
+    'projects.sourceCode': 'Ver el codigo fuente de',
+    'projects.sourceCodeFollowing': '.',
+    'projects.link': 'Ver el proyecto',
   },
 } as const;

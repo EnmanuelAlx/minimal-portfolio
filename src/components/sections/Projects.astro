@@ -1,9 +1,12 @@
 ---
 import type { Resume } from '@/content/config';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import GitHub from '@/icons/GitHub.astro';
 
 const { data } = Astro.props;
 const { projects } = data as Resume;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <ul>
@@ -13,7 +16,7 @@ const { projects } = data as Resume;
         <article>
           <header>
             <h3>
-              <a href={url} title={`See the project ${name}`}>
+              <a href={url} title={`${t('projects.link')} ${name}`}>
                 {name}
               </a>
               {isActive && <span>&bull;</span>}
@@ -22,7 +25,7 @@ const { projects } = data as Resume;
                   class='github-code-link'
                   href={github}
                   target='_blank'
-                  title={`See the ${name} source code`}>
+                  title={`${t('projects.sourceCode')} ${name}${t('projects.sourceCodeFollowing')}`}>
                   <GitHub />
                 </a>
               )}
