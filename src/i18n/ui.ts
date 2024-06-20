@@ -21,6 +21,8 @@ export const ui = {
     'hero.phoneFollowing': 'at the following number:',
     'hero.social': 'Visit',
     'hero.socialFollowing': 'profile at the following link:',
+    currentDateString: 'Current',
+    remoteString: 'Remote',
   },
   es: {
     title: 'Currículum de',
@@ -37,5 +39,7 @@ export const ui = {
     'hero.phoneFollowing': 'al siguiente número:',
     'hero.social': 'Visita el perfil de',
     'hero.socialFollowing': 'en el siguiente enlace:',
+    currentDateString: 'Actual',
+    remoteString: 'Remoto',
   },
 } as const;
