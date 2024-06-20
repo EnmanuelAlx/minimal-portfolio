@@ -11,6 +11,7 @@ import LinkedIn from '@icons/LinkedIn.astro';
 import Mail from '@icons/Mail.astro';
 import Phone from '@icons/Phone.astro';
 import WorldMap from '@icons/WorldMap.astro';
+import Language from '@icons/Language.astro';
 import X from '@icons/X.astro';
 
 const SOCIAL_ICONS: Record<string, any> = {
@@ -28,6 +29,9 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const changeLanguage = Astro.url.href.split('/').pop() == 'es' ? '/' : '/es';
+const changeLanguageURL = new URL(changeLanguage, Astro.url.origin);
 ---
 
 <div class='container'>
@@ -79,6 +83,9 @@ const t = useTranslations(lang);
           );
         })
       }
+      <a href={changeLanguageURL} title={t('changeLanguage')}>
+        <Language />
+      </a>
     </footer>
   </div>
   <figure>

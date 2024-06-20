@@ -33,6 +33,7 @@ export const ui = {
     'commands.footer.press': 'Press',
     'commands.footer.open': 'to open the command palette',
     'commands.footer.mobile': 'Open the command palette',
+    changeLanguage: 'Change language',
   },
   es: {
     title: 'Currículum de',
@@ -61,5 +62,6 @@ export const ui = {
     'commands.footer.press': 'Presiona',
     'commands.footer.open': 'para abrir la paleta de comandos',
     'commands.footer.mobile': 'Abrir la paleta de comandos',
+    changeLanguage: 'Cambiar idioma',
   },
 } as const;
