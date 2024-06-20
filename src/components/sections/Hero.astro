@@ -35,6 +35,7 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
     </span>
     <footer class='print'>
       {printInfo}
+      <span id='web-url'></span>
     </footer>
     <footer class='no-print'>
       {
@@ -80,7 +81,21 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
   </figure>
 </div>
 
+<script>
+  const webUrl = document.getElementById('web-url');
+  if (webUrl) {
+    webUrl.innerText = `See the web version: ${window.location.href}`;
+  }
+</script>
+
 <style>
+  #web-url {
+    margin-top: 8px;
+    color: #555;
+    font-size: 0.7rem;
+    text-wrap: pretty;
+  }
+
   .container {
     display: flex;
     gap: 1rem;
@@ -98,6 +113,7 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
 
   h1 {
     font-size: 1.5rem;
+    font-weight: 500;
   }
 
   h2 {
