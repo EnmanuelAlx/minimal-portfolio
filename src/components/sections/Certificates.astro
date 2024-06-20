@@ -1,8 +1,11 @@
 ---
 import type { Resume } from '@/content/config';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 
 const { data } = Astro.props;
 const { certificates } = data as Resume;
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang);
 ---
 
 <ul>
@@ -18,7 +21,7 @@ const { certificates } = data as Resume;
           <article>
             <header>
               <div>
-                <a href={url} title={`View ${name} certificate`}
+                <a href={url} title={`${t('certificates.link')} ${name}`}
               target='_blank'
               rel='noopener noreferrer'>
                   <h3>{name}</h3>

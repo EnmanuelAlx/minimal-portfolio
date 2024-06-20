@@ -26,6 +26,7 @@ export const ui = {
     'projects.sourceCode': 'See the',
     'projects.sourceCodeFollowing': ' source code.',
     'projects.link': 'See the project',
+    'certificates.link': 'See the certificate of',
   },
   es: {
     title: 'Currículum de',
@@ -47,5 +48,6 @@ export const ui = {
     'projects.sourceCode': 'Ver el codigo fuente de',
     'projects.sourceCodeFollowing': '.',
     'projects.link': 'Ver el proyecto',
+    'certificates.link': 'Ver el certificado de',
   },
 } as const;
