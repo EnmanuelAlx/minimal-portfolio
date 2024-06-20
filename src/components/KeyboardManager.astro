@@ -85,7 +85,7 @@ const socialInfo = profiles.map(({ network, url }) => {
 const dataInfo = [printInfo, ...socialInfo];
 ---
 
-<footer class='no-print'>
+<footer class='no-print commands'>
   <span class='desktop'
     >Press <kbd>Cmd / Ctrl</kbd> + <kbd>K</kbd> to open the command palette.</span
   >
@@ -127,7 +127,7 @@ const dataInfo = [printInfo, ...socialInfo];
   }
 
   const hotkeypad = new HotKeyPad();
-  const footer = document.querySelector('footer');
+  const footer = document.querySelector('.commands');
 
   footer?.addEventListener('click', () => {
     var event = new KeyboardEvent('keydown', {
@@ -220,6 +220,10 @@ const dataInfo = [printInfo, ...socialInfo];
 
   .mobile {
     display: none;
+  }
+
+  footer:hover {
+    cursor: pointer;
   }
 
   footer .desktop {
