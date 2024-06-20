@@ -183,6 +183,11 @@
       "keywords": ["Web development", "Frontend", "JavaScript Library", "UI"]
     }
   ],
+  "softskills": [
+    { "name": "Proactive" },
+    { "name": "Problem-Solving" },
+    { "name": "Leadership" }
+  ],
   "languages": [
     {
       "language": "Spanish",
