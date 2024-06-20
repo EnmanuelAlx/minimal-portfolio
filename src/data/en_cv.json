@@ -40,7 +40,8 @@
       "startDate": "2021-01-01",
       "endDate": null,
       "summary": "Most watched development streamer in Spanish on Twitch. +1 million followers across all my social networks. Recognised by Google, Microsoft and GitHub for my impact on the development community.",
-      "highlights": ["Started the company"]
+      "highlights": ["Started the company"],
+      "isRemote": true
     },
     {
       "name": "Adevinta",
@@ -57,7 +58,8 @@
       "startDate": "2011-03-01",
       "endDate": "2016-05-01",
       "summary": "I developed a geolocated news platform and an API to consume the information. Scaled services to support the load of over hundreds of thousands of requests per day. Cut delivery times and deployments to production by half. Collaborated with Mozilla and Telefónica to develop the first FirefoxOS TV app.",
-      "highlights": ["Started the company"]
+      "highlights": ["Started the company"],
+      "isRemote": true
     }
   ],
   "volunteer": [

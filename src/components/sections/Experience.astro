@@ -4,7 +4,7 @@ import { work } from '@cv/en_cv.json';
 
 <ul>
   {
-    work.map(({ name, startDate, endDate, position, summary, highlights }) => {
+    work.map(({ name, startDate, endDate, position, summary, highlights, isRemote }) => {
       const startDateString = new Date(startDate).toLocaleDateString('en-US', {
         month: 'short',
         year: 'numeric',
@@ -20,7 +20,10 @@ import { work } from '@cv/en_cv.json';
           <article>
             <header>
               <div>
+                <div class="name">
                 <h3>{name}</h3>
+                {isRemote && <span class="tag">Remote</span>}  
+                </div>
                 <h4>{position}</h4>
               </div>
               <time>
@@ -39,6 +42,23 @@ import { work } from '@cv/en_cv.json';
 </ul>
 
 <style>
+
+  .name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .tag {
+    border-radius: 6px;
+    background-color: #eee;
+    color: black;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem
+  }
+
   ul {
     display: flex;
     flex-direction: column;

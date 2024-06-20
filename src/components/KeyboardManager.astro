@@ -1,12 +1,14 @@
 ---
+import 'hotkeypad/reset.css';
+import 'hotkeypad/index.css';
 import { basics } from '@cv/en_cv.json';
 const { profiles } = basics;
 
-type NinjaIcon = {
+type Icons = {
   [key: string]: string;
 };
 
-const ICONS: NinjaIcon = {
+const ICONS: Icons = {
   GitHub: `<svg
   width="16"
   height="16"
@@ -83,17 +85,36 @@ const socialInfo = profiles.map(({ network, url }) => {
 const dataInfo = [printInfo, ...socialInfo];
 ---
 
-<footer>
-  Press <kbd>Cmd / Ctrl</kbd> + <kbd>K</kbd> to open the command palette.
+<footer class='no-print'>
+  <span class='desktop'
+    >Press <kbd>Cmd / Ctrl</kbd> + <kbd>K</kbd> to open the command palette.</span
+  >
+  <span class='mobile'>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='25'
+      height='25'
+      fill='none'
+      viewBox='0 0 24 24'
+      stroke-width='1.5'
+      stroke='currentColor'>
+      <path
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        d='m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z'
+      ></path>
+    </svg>
+  </span>
 </footer>
 
-<ninja-keys
+<div
+  id='hotkeypad'
   data-info={JSON.stringify(dataInfo)}
-  placeholder='Type a command or search:'
-  disabledBreadcrumbs></ninja-keys>
+  data-placeholder='Type a command or search:'>
+</div>
 
 <script>
-  import 'ninja-keys';
+  import HotKeyPad from 'hotkeypad';
 
   interface Info {
     id: string;
@@ -102,40 +123,56 @@ const dataInfo = [printInfo, ...socialInfo];
     icon: string;
     hotkey: string;
     section: string;
+    handler?: () => void;
   }
 
-  const ninja = document.querySelector('ninja-keys') as any;
+  const hotkeypad = new HotKeyPad();
+  const footer = document.querySelector('footer');
 
-  if (ninja !== null) {
-    const info = ninja.getAttribute('data-info') ?? [];
-    const parsedInfo: Info[] = JSON.parse(info) as Info[];
+  footer?.addEventListener('click', () => {
+    var event = new KeyboardEvent('keydown', {
+      key: 'k',
+      code: 'KeyK',
+      keyCode: 75,
+      which: 75,
+      ctrlKey: true,
+      altKey: false,
+      shiftKey: false,
+      metaKey: false,
+    });
 
-    const data = parsedInfo.map(({ url, title, icon, hotkey, section, id }) => {
-      if (id === 'print') {
-        return {
-          id,
-          title,
-          icon,
-          hotkey,
-          section,
-          handler: () => {
-            window.scrollTo(0, 0);
-            window.print();
-          },
-        };
-      }
+    document.dispatchEvent(event);
+  });
+
+  const info = hotkeypad.instance.getAttribute('data-info') ?? '[]';
+  const parsedInfo: Info[] = JSON.parse(info) as Info[];
+
+  const data = parsedInfo.map(({ url, title, icon, hotkey, section, id }) => {
+    if (id === 'print') {
       return {
         id,
         title,
         icon,
         hotkey,
         section,
-        url,
-        handler: () => window.open(url || '', '_blank'),
+        handler: () => {
+          window.scrollTo(0, 0);
+          window.print();
+        },
       };
-    });
-    ninja.data = data;
-  }
+    }
+    return {
+      id,
+      title,
+      icon,
+      hotkey,
+      section,
+      url,
+      handler: () => window.open(url || '', '_blank'),
+    };
+  });
+
+  hotkeypad.setCommands(data);
 </script>
 
 <style>
@@ -154,7 +191,38 @@ const dataInfo = [printInfo, ...socialInfo];
     }
   }
 
-  footer {
+  @media (max-width: 768px) {
+    footer .desktop {
+      display: none;
+    }
+
+    footer .mobile {
+      color: #999;
+      position: fixed;
+      bottom: 15px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 100%;
+      background: #fdfdfd;
+      border: 1px solid #eee;
+      right: 15px;
+      padding: 5px;
+    }
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  footer .desktop {
     background: #fdfdfd;
     border-top: 1px solid #eee;
     position: fixed;
@@ -170,10 +238,10 @@ const dataInfo = [printInfo, ...socialInfo];
     animation-range: entry 100% cover 10%;
   }
 
-  footer kbd {
+  footer .desktop kbd {
     background: #eee;
-    border-radius: '4px';
-    padding: '2px 4px';
-    font-size: '12px';
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 14px;
   }
 </style>
