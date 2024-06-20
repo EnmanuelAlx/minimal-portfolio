@@ -222,14 +222,16 @@
         "Multilanguage",
         "JavaScript & TypeScript"
       ],
-      "url": "https://advent.js/dev"
+      "url": "https://advent.js/dev",
+      "github": "https://github.com/midudev/codi.link"
     },
     {
       "name": "Codember",
       "isActive": true,
       "description": "Interactive programming game with challenges and secrets",
       "highlights": ["+2000 active users", "Challenges for any language"],
-      "url": "https://codember.dev"
+      "url": "https://codember.dev",
+      "github": "https://github.com/midudev/codi.link"
     },
     {
       "name": "codi.link",
@@ -240,7 +242,7 @@
       "github": "https://github.com/midudev/codi.link"
     },
     {
-      "name": "Pruebas Técnicas",
+      "name": "Pruebas Técnicas y más",
       "isActive": true,
       "description": "List of technical tests of companies to practice programming",
       "highlights": ["100% free", "+500 community solutions"],
@@ -251,7 +253,8 @@
       "name": "miduConf",
       "description": "Streaming programming conference for the Spanish-speaking community with top talks",
       "highlights": ["+15k tickets handed over", "+50k live viewers"],
-      "url": "https://miduconf.com"
+      "url": "https://miduconf.com",
+      "github": "https://github.com/midudev/codi.link"
     }
   ]
 }

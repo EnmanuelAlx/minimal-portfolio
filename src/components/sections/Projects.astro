@@ -1,10 +1,11 @@
 ---
+import GitHub from '@/icons/GitHub.astro';
 import { projects } from '@cv/en_cv.json';
 ---
 
 <ul>
   {
-    projects.map(({ url, description, highlights, name, isActive }) => (
+    projects.map(({ url, description, highlights, name, isActive, github }) => (
       <li>
         <article>
           <header>
@@ -13,6 +14,15 @@ import { projects } from '@cv/en_cv.json';
                 {name}
               </a>
               {isActive && <span>&bull;</span>}
+              {github && (
+                <a
+                  class='github-code-link'
+                  href={github}
+                  target='_blank'
+                  title={`See the ${name} source code`}>
+                  <GitHub />
+                </a>
+              )}
             </h3>
             <p>{description}</p>
           </header>
@@ -28,11 +38,35 @@ import { projects } from '@cv/en_cv.json';
 </ul>
 
 <style>
+  .github-code-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 13px;
+    width: 13px;
+    transition: all 0.2s ease;
+    margin-left: 4px;
+  }
+
+  .github-code-link:hover {
+    transform: scale(1.1);
+  }
+
   ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
     margin-inline: -16px;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
   }
 
   article {
@@ -50,7 +84,9 @@ import { projects } from '@cv/en_cv.json';
   }
 
   article h3 span {
-    color: rgb(0, 188, 64);
+    color: rgb(72, 197, 104);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    margin-left: 2px;
   }
 
   article p {

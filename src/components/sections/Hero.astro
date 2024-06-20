@@ -83,8 +83,6 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
 <style>
   .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     gap: 1rem;
   }
 
@@ -92,6 +90,10 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  figure {
+    min-width: 110px;
   }
 
   h1 {
@@ -134,7 +136,6 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
     display: flex;
     gap: 4px;
     margin-top: 8px;
-    max-width: 450px;
     text-wrap: pretty;
   }
 
@@ -156,9 +157,22 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
     border: 1px solid #ddd;
   }
 
-  @media (max-width: 340px) {
+  @media (max-width: 500px) {
+    .container {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+
     .info {
-      max-width: 150px;
+      align-items: center;
+    }
+
+    img {
+      width: 90px;
+    }
+
+    footer {
+      text-wrap: balance;
     }
   }
 </style>
