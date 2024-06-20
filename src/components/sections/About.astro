@@ -1,5 +1,8 @@
 ---
-import { basics } from '@cv/en_cv.json';
+import type { Resume } from '@/content/config';
+
+const { data } = Astro.props;
+const { basics } = data as Resume;
 const { summary } = basics;
 ---
 

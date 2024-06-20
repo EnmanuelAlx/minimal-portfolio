@@ -1,9 +1,11 @@
 ---
-import { basics } from '@cv/en_cv.json';
-const { name, email, phone, image, label, location, profiles, summary, url } =
-  basics;
-const { address, postalCode, city, countryCode, region } = location;
+const { data } = Astro.props;
+const { basics } = data as Resume;
+const { name, email, phone, image, label, location, profiles } = basics;
+const { city, region } = location;
 
+import type { Resume } from '@/content/config';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import GitHub from '@icons/GitHub.astro';
 import LinkedIn from '@icons/LinkedIn.astro';
 import Mail from '@icons/Mail.astro';
@@ -23,6 +25,9 @@ const githubInfo = profiles.find(({ network }) => network === 'GitHub');
 const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
   .filter(Boolean)
   .join(' ● ');
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class='container'>
@@ -42,7 +47,7 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
         email && (
           <a
             href={`mailto:${email}`}
-            title={`Send an email to ${name} at the following address: ${email}`}
+            title={`${t('hero.sendEmail')} ${name} ${t('hero.emailFollowing')} ${email}`}
             target='_blank'
             rel='noopener noreferrer'>
             <Mail />
@@ -53,7 +58,7 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
         phone && (
           <a
             href={`tel:${phone}`}
-            title={`Call ${name} at the following number: ${phone}`}
+            title={`${t('hero.phone')} ${name} ${t('hero.phoneFollowing')} ${phone}`}
             target='_blank'
             rel='noopener noreferrer'>
             <Phone />
@@ -66,7 +71,7 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
           return (
             <a
               href={url}
-              title={`Visit ${name}'s ${network} profile at the following address: ${url}`}
+              title={`${t('hero.social')} ${network} ${t('hero.socialFollowing')} ${url}`}
               target='_blank'
               rel='noopener noreferrer'>
               <Icon />
@@ -82,9 +87,17 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
 </div>
 
 <script>
+  import { getLangFromUrl } from '@/i18n/utils';
+
   const webUrl = document.getElementById('web-url');
+  const lang = getLangFromUrl(new URL(window.location.href));
+  const websiteMsg = {
+    en: 'See the web version at:',
+    es: 'Ver la versión web en:',
+  };
+
   if (webUrl) {
-    webUrl.innerText = `See the web version: ${window.location.href}`;
+    webUrl.innerText = `${websiteMsg[lang]} ${window.location.href}`;
   }
 </script>
 

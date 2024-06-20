@@ -1,0 +1,86 @@
+{
+  "basics": {
+    "name": "Alvaro Capaceta Magallanes",
+    "label": "Espaniol Full Stack Developer",
+    "image": "/me.webp",
+    "email": "miduga@gmail.com",
+    "phone": "+34 688888888",
+    "url": "https://midu.dev",
+    "summary": "+15 years of experience as a web developer. Currently I am a content creator and development dommunicator. I live in Barcelona, Spain. I have worked in different environments: from accelerating the development of start-ups to leading teams in multinational companies.",
+    "location": {
+      "city": "el Prat de Llobregat",
+      "region": "Spain"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "midudev",
+        "url": "https://linkedin.com/in/midudev"
+      },
+      {
+        "network": "X",
+        "username": "midudev",
+        "url": "https://x.com/midudev"
+      },
+      {
+        "network": "GitHub",
+        "username": "midudev",
+        "url": "https://github.com/midudev"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "midudev",
+      "position": "Web programming communicator",
+      "startDate": "2021-01-01",
+      "endDate": null,
+      "summary": "Most watched development streamer in Spanish on Twitch. +1 million followers across all my social networks. Recognised by Google, Microsoft and GitHub for my impact on the development community.",
+      "highlights": ["Started the company"],
+      "isRemote": true
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universitat Oberta de Catalunya",
+      "area": "Software Engineer",
+      "startDate": "2003-01-01",
+      "endDate": "2009-01-01"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "organization": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML"
+    }
+  ],
+  "softskills": [{ "name": "Proactive" }],
+  "projects": [
+    {
+      "name": "mars.codes",
+      "isActive": true,
+      "description": "Interactive story with programming challenges to travel to Mars",
+      "highlights": ["Choose your own adventure", "In progress"],
+      "url": "https://mars.codes"
+    },
+    {
+      "name": "AdventJS",
+      "isActive": true,
+      "description": "JavaScript programming challenges for every day of December until Christmas",
+      "highlights": [
+        "+1 million visits",
+        "Multilanguage",
+        "JavaScript & TypeScript"
+      ],
+      "url": "https://advent.js/dev",
+      "github": "https://github.com/midudev/codi.link"
+    }
+  ]
+}

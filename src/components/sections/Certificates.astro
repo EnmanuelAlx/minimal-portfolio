@@ -1,10 +1,13 @@
 ---
-import { certificates } from '@cv/en_cv.json';
+import type { Resume } from '@/content/config';
+
+const { data } = Astro.props;
+const { certificates } = data as Resume;
 ---
 
 <ul>
   {
-    certificates.map(({date, name, issuer, url }) => {
+    certificates.map(({date, name,url, organization }) => {
       const dateString = new Date(date).toLocaleDateString('en-US', {
         month: 'short',
         year: 'numeric',
@@ -27,7 +30,7 @@ import { certificates } from '@cv/en_cv.json';
             </header>
             <footer>
               {' '}
-              <p>{issuer}</p>
+              <p>{organization}</p>
             </footer>
           </article>
         </li>

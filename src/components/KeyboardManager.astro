@@ -1,7 +1,10 @@
 ---
 import 'hotkeypad/reset.css';
 import 'hotkeypad/index.css';
-import { basics } from '@cv/en_cv.json';
+import type { Resume } from '@/content/config';
+
+const { data } = Astro.props;
+const { basics } = data as Resume;
 const { profiles } = basics;
 
 type Icons = {

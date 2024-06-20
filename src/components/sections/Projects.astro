@@ -1,6 +1,9 @@
 ---
+import type { Resume } from '@/content/config';
 import GitHub from '@/icons/GitHub.astro';
-import { projects } from '@cv/en_cv.json';
+
+const { data } = Astro.props;
+const { projects } = data as Resume;
 ---
 
 <ul>
