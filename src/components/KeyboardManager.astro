@@ -2,6 +2,7 @@
 import 'hotkeypad/reset.css';
 import 'hotkeypad/index.css';
 import type { Resume } from '@/content/config';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 
 const { data } = Astro.props;
 const { basics } = data as Resume;
@@ -64,12 +65,15 @@ const ICONS: Icons = {
   </svg>`,
 };
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const printInfo = {
   id: 'print',
-  title: 'Print',
+  title: t('commands.print'),
   icon: ICONS.Print,
   hotkey: 'ctrl+P',
-  section: 'Actions',
+  section: t('commands.section.actions'),
 };
 
 const socialInfo = profiles.map(({ network, url }) => {
@@ -90,9 +94,11 @@ const dataInfo = [printInfo, ...socialInfo];
 
 <footer class='no-print commands'>
   <span class='desktop'
-    >Press <kbd>Cmd / Ctrl</kbd> + <kbd>K</kbd> to open the command palette.</span
+    >{t('commands.footer.press')}
+    <kbd>Cmd / Ctrl</kbd> + <kbd>K</kbd>
+    {t('commands.footer.open')}</span
   >
-  <span class='mobile'>
+  <span class='mobile' title={t('commands.footer.mobile')}>
     <svg
       xmlns='http://www.w3.org/2000/svg'
       width='25'
@@ -113,7 +119,7 @@ const dataInfo = [printInfo, ...socialInfo];
 <div
   id='hotkeypad'
   data-info={JSON.stringify(dataInfo)}
-  data-placeholder='Type a command or search:'>
+  data-placeholder={t('commands.placeholder')}>
 </div>
 
 <script>
