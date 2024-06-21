@@ -80,62 +80,76 @@ const dataInfo = [printInfo, languageInfo, ...socialInfo];
 </div>
 
 <script>
+  import { navigate } from 'astro:transitions/client';
   import HotKeyPad from 'hotkeypad';
+  document.addEventListener('astro:page-load', () => {
+    const changeLanguage =
+      window.location.origin.split('/').pop() == 'es' ? '/' : '/es';
+    const changeLanguageURL = new URL(changeLanguage, window.location.origin);
 
-  const changeLanguage =
-    window.location.origin.split('/').pop() == 'es' ? '/' : '/es';
-  const changeLanguageURL = new URL(changeLanguage, window.location.origin);
+    interface Info {
+      id: string;
+      url?: string;
+      title: string;
+      icon: string;
+      hotkey: string;
+      section: string;
+      handler?: () => void;
+    }
 
-  interface Info {
-    id: string;
-    url?: string;
-    title: string;
-    icon: string;
-    hotkey: string;
-    section: string;
-    handler?: () => void;
-  }
+    const hotkeypad = new HotKeyPad();
+    const footer = document.querySelector('.commands');
 
-  const hotkeypad = new HotKeyPad();
-  const footer = document.querySelector('.commands');
+    footer?.addEventListener('click', () => {
+      var event = new KeyboardEvent('keydown', {
+        key: 'k',
+        code: 'KeyK',
+        keyCode: 75,
+        which: 75,
+        ctrlKey: true,
+        altKey: false,
+        shiftKey: false,
+        metaKey: false,
+      });
 
-  footer?.addEventListener('click', () => {
-    var event = new KeyboardEvent('keydown', {
-      key: 'k',
-      code: 'KeyK',
-      keyCode: 75,
-      which: 75,
-      ctrlKey: true,
-      altKey: false,
-      shiftKey: false,
-      metaKey: false,
+      document.dispatchEvent(event);
     });
 
-    document.dispatchEvent(event);
-  });
+    const info = hotkeypad.instance.getAttribute('data-info') ?? '[]';
+    const parsedInfo: Info[] = JSON.parse(info) as Info[];
 
-  const info = hotkeypad.instance.getAttribute('data-info') ?? '[]';
-  const parsedInfo: Info[] = JSON.parse(info) as Info[];
+    const openUrl = (
+      url: string | undefined,
+      urlOptions: '_self' | '_blank'
+    ) => {
+      if (!url) return;
+      if (urlOptions === '_self') {
+        navigate(url);
+        return;
+      }
+      window.open(url, urlOptions);
+    };
 
-  const data = parsedInfo.map(({ url, title, icon, hotkey, section, id }) => {
-    const basics = { id, title, icon, hotkey, section };
-    const urlOptions = id === 'language' ? '_self' : '_blank';
-    if (id === 'print') {
+    const data = parsedInfo.map(({ url, title, icon, hotkey, section, id }) => {
+      const basics = { id, title, icon, hotkey, section };
+      const urlOptions = id === 'language' ? '_self' : '_blank';
+      if (id === 'print') {
+        return {
+          ...basics,
+          handler: () => {
+            window.scrollTo(0, 0);
+            window.print();
+          },
+        };
+      }
       return {
         ...basics,
-        handler: () => {
-          window.scrollTo(0, 0);
-          window.print();
-        },
+        handler: () => openUrl(url, urlOptions),
       };
-    }
-    return {
-      ...basics,
-      handler: () => window.open(url || '', urlOptions),
-    };
-  });
+    });
 
-  hotkeypad.setCommands(data);
+    hotkeypad.setCommands(data);
+  });
 </script>
 
 <style>
