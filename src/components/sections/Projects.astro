@@ -16,7 +16,10 @@ const t = useTranslations(lang);
         <article>
           <header>
             <h3>
-              <a href={url} title={`${t('projects.link')} ${name}`}>
+              <a
+                href={url}
+                title={`${t('projects.link')} ${name}`}
+                target='_blank'>
                 {name}
               </a>
               {isActive && <span>&bull;</span>}
