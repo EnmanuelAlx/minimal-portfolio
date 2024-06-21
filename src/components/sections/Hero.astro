@@ -96,16 +96,18 @@ const changeLanguageURL = new URL(changeLanguage, Astro.url.origin);
 <script>
   import { getLangFromUrl } from '@/i18n/utils';
 
-  const webUrl = document.getElementById('web-url');
-  const lang = getLangFromUrl(new URL(window.location.href));
-  const websiteMsg = {
-    en: 'See the web version at:',
-    es: 'Ver la versión web en:',
-  };
+  document.addEventListener('astro:page-load', () => {
+    const webUrl = document.getElementById('web-url');
+    const lang = getLangFromUrl(new URL(window.location.href));
+    const websiteMsg = {
+      en: 'See the web version at:',
+      es: 'Ver la versión web en:',
+    };
 
-  if (webUrl) {
-    webUrl.innerText = `${websiteMsg[lang]} ${window.location.href}`;
-  }
+    if (webUrl) {
+      webUrl.innerText = `${websiteMsg[lang]} ${window.location.href}`;
+    }
+  });
 </script>
 
 <style>
