@@ -8,6 +8,8 @@ export const defaultLang = 'en';
 export const ui = {
   en: {
     title: 'Resume of',
+    description:
+      "Explore Alvaro's professional experience, projects, and education through this clean, minimalistic, and print-ready web resume. Discover a comprehensive overview of skills, accomplishments, and expertise in web development. Whether you're looking to collaborate on a project or learn more about Alvaro's career journey, you'll find detailed information and easy navigation throughout the site.",
     'section.about': 'About',
     'section.experience': 'Experience',
     'section.education': 'Education',
@@ -38,6 +40,8 @@ export const ui = {
   },
   es: {
     title: 'Currículum de',
+    description:
+      'Explora la experiencia profesional, los proyectos y la educación de Álvaro a través de este currículum web minimalista y listo para imprimir. Descubre una visión completa de sus habilidades, logros y experiencia en desarrollo web. Ya sea que busques colaborar en un proyecto o aprender más sobre la trayectoria profesional de Álvaro, encontrarás información detallada y una navegación sencilla en todo el sitio.',
     'section.about': 'Sobre mí',
     'section.experience': 'Experiencia',
     'section.education': 'Educación',
