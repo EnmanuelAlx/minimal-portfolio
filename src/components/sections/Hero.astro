@@ -31,7 +31,6 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const changeLanguage = Astro.url.href.split('/').pop() == 'es' ? '/' : '/es';
-const changeLanguageURL = new URL(changeLanguage, Astro.url.origin);
 ---
 
 <div class='container'>
@@ -83,7 +82,7 @@ const changeLanguageURL = new URL(changeLanguage, Astro.url.origin);
           );
         })
       }
-      <a href={changeLanguageURL} title={t('changeLanguage')}>
+      <a href={changeLanguage} title={t('changeLanguage')}>
         <Language />
       </a>
     </footer>
