@@ -22,7 +22,6 @@ const printInfo = {
 };
 
 const changeLanguage = lang == 'es' ? '/' : '/es';
-const changeLanguageURL = new URL(changeLanguage, Astro.url.origin);
 
 const languageInfo = {
   id: 'language',
@@ -30,7 +29,7 @@ const languageInfo = {
   icon: ICONS.Language,
   hotkey: 'ctrl+C',
   section: t('commands.section.actions'),
-  url: changeLanguageURL,
+  url: changeLanguage,
 };
 
 const socialInfo = profiles.map(({ network, url }) => {
@@ -83,14 +82,10 @@ const dataInfo = [printInfo, languageInfo, ...socialInfo];
   import { navigate } from 'astro:transitions/client';
   import HotKeyPad from 'hotkeypad';
   document.addEventListener('astro:page-load', () => {
-    const changeLanguage =
-      window.location.origin.split('/').pop() == 'es' ? '/' : '/es';
-    const changeLanguageURL = new URL(changeLanguage, window.location.origin);
-
     interface Info {
       id: string;
-      url?: string;
       title: string;
+      url?: string;
       icon: string;
       hotkey: string;
       section: string;
