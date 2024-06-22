@@ -21,6 +21,14 @@ const t = useTranslations(lang);
     <meta name='viewport' content='width=device-width' />
     <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
     <link rel='icon' href='/favicon.ico' type='image/x-icon' />
+    <!-- meta OG -->
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={t('description')} />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content={Astro.url} />
+    <meta property='og:image' content='/favicon-512x512.png' />
+    <meta property='og:site_name' content={title} />
+    <meta property='og:locale' content={lang} />
     <title>{title}</title>
 
     <ViewTransitions />
