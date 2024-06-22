@@ -1,86 +1,186 @@
 {
   "basics": {
     "name": "Alvaro Capaceta Magallanes",
-    "label": "Espaniol Full Stack Developer",
+    "label": "Desarrollador Full-Stack con enfoque en Backend, especializado en desarrollo web y dedicado a crear experiencias digitales impactantes y funcionales",
     "image": "/me.webp",
-    "email": "miduga@gmail.com",
-    "phone": "+34 688888888",
-    "url": "https://midu.dev",
-    "summary": "+15 years of experience as a web developer. Currently I am a content creator and development dommunicator. I live in Barcelona, Spain. I have worked in different environments: from accelerating the development of start-ups to leading teams in multinational companies.",
+    "email": "ingcapadev@gmail.com",
+    "phone": "+52 6692108089",
+    "url": "https://ingcapadev.com",
+    "summary": "Apasionado por la tecnología y dedicado a la programación, tengo un fuerte compromiso con el aprendizaje continuo y mantenerme actualizado con las últimas tecnologías emergentes en el campo. He trabajado en entornos de startups, acelerando el desarrollo de startups y colaborando en proyectos de clientes. Mis habilidades proactivas para resolver problemas aseguran una funcionalidad óptima, un diseño impresionante y experiencias de usuario excepcionales. Mi objetivo es hacer la vida de las personas más fácil y emocionante a través de la innovación digital.",
     "location": {
-      "city": "el Prat de Llobregat",
-      "region": "Spain"
+      "city": "Mazatlan",
+      "region": "Sinaloa"
     },
     "profiles": [
       {
+        "network": "GitHub",
+        "username": "ingcapadev",
+        "url": "https://github.com/ingcapadev"
+      },
+      {
         "network": "LinkedIn",
-        "username": "midudev",
-        "url": "https://linkedin.com/in/midudev"
+        "username": "ingcapadev",
+        "url": "https://www.linkedin.com/in/ingcapadev/"
       },
       {
         "network": "X",
-        "username": "midudev",
-        "url": "https://x.com/midudev"
-      },
-      {
-        "network": "GitHub",
-        "username": "midudev",
-        "url": "https://github.com/midudev"
+        "username": "@fta_capa",
+        "url": "https://x.com/fta_capa"
       }
     ]
   },
   "work": [
     {
-      "name": "midudev",
-      "position": "Web programming communicator",
-      "startDate": "2021-01-01",
+      "name": "Voltz",
+      "position": "Desarrolador Full-Stack",
+      "startDate": "2023-10-02",
       "endDate": null,
-      "summary": "Most watched development streamer in Spanish on Twitch. +1 million followers across all my social networks. Recognised by Google, Microsoft and GitHub for my impact on the development community.",
-      "highlights": ["Started the company"],
+      "summary": "Desarrollo de una herramienta de cotización y e-commerce para la venta de material electrico, colaboré en el diseño e implementación de varias vistas e interfaces del e-commerce. Además, desarrollé scripts en TypeScript para gestionar nuestra base de datos Firebase a gran escala. También diseñé APIs para análisis exhaustivos de recolección de datos, implementé características de inteligencia artificial en un chatbot y rediseñé con éxito el proceso de pago para aumentar significativamente las tasas de conversión de ventas.",
+      "highlights": [""],
+      "isRemote": true
+    },
+    {
+      "name": "Luthor Solutions",
+      "position": "Web Developer",
+      "startDate": "2023-06-02",
+      "endDate": "2023-10-02",
+      "summary": "Desarrollé APIs escalables con NestJS, integrando las bases de datos Neo4J, SQL, Firebase y SQLite. Creé microservicios para correos, autenticación, informes y almacenamiento utilizando Firebase y Cloudflare R2. Implementé Google Analytics para el seguimiento de datos en múltiples sitios web. Diseñé landing pages dinámicas y responsivas  con React, NextJS y Tailwind CSS, y converti diseños de Figma en sitios web interactivos. Construí aplicaciones web complejas utilizando React, Vite y Redux Toolkit para la gestión avanzada de estado y efectos secundarios.",
+      "highlights": [""],
       "isRemote": true
     }
   ],
   "education": [
     {
-      "institution": "Universitat Oberta de Catalunya",
-      "area": "Software Engineer",
-      "startDate": "2003-01-01",
-      "endDate": "2009-01-01"
+      "institution": "Universidad Politécnica de Sinaloa",
+      "area": "Ingeniería en Tecnologías de la Información",
+      "startDate": "2020-08-20",
+      "endDate": "2023-07-10"
     }
   ],
   "certificates": [
     {
-      "name": "Certificate",
-      "date": "2021-11-07",
-      "organization": "Company",
-      "url": "https://certificate.com"
+      "name": "Desarrollo de Aplicaciones Neo4j con TypeScript",
+      "date": "2024-01-26",
+      "organization": "Neo4j GraphAcademy",
+      "url": "https://graphacademy.neo4j.com/c/39a38074-f78a-4476-b185-224f6280781e/"
+    },
+    {
+      "name": "Introducción al Desarrollo Web II",
+      "date": "2021-12-02",
+      "organization": "Google, Universidad de Alicante",
+      "url": "https://drive.google.com/file/d/16Q-7lxWhN3X8MnIWxV7z1I9OXaTXugwz/view?usp=sharing"
+    },
+    {
+      "name": "Introducción al Desarrollo Web I",
+      "date": "2021-11-25",
+      "organization": "Google, Universidad de Alicante",
+      "url": "https://drive.google.com/file/d/1D2yXuSt64IOwhvCbvreHXzRkIfhW3IGu/view?usp=sharing"
     }
   ],
   "skills": [
     {
       "name": "HTML"
-    }
-  ],
-  "softskills": [{ "name": "Proactive" }],
-  "projects": [
-    {
-      "name": "mars.codes",
-      "isActive": true,
-      "description": "Interactive story with programming challenges to travel to Mars",
-      "highlights": ["Choose your own adventure", "In progress"],
-      "url": "https://mars.codes"
     },
     {
-      "name": "AdventJS",
+      "name": "CSS / Tailwind CSS"
+    },
+    {
+      "name": "JavaScript / TypeScript"
+    },
+    {
+      "name": "Git / GitHub"
+    },
+    {
+      "name": "Node.js / Express.js / NestJS"
+    },
+    {
+      "name": "SQL / SQLite / Drizzle"
+    },
+    {
+      "name": "Firebase"
+    },
+    {
+      "name": "Neo4J"
+    },
+    {
+      "name": "React / Next.js"
+    },
+    {
+      "name": "Astro"
+    },
+    {
+      "name": "Docker"
+    },
+    {
+      "name": "Cloudflare / Vercel / Google Cloud"
+    }
+  ],
+  "softskills": [
+    {
+      "name": "Resolución de problemas"
+    },
+    {
+      "name": "Comunicación"
+    },
+    {
+      "name": "Liderazgo"
+    },
+    {
+      "name": "Trabajo en equipo"
+    },
+    {
+      "name": "Pensamiento crítico"
+    },
+    {
+      "name": "Mentalidad de crecimiento"
+    },
+    {
+      "name": "Gestión del tiempo"
+    },
+    {
+      "name": "Innovación"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Aura Series API",
       "isActive": true,
-      "description": "JavaScript programming challenges for every day of December until Christmas",
+      "description": "API para Aura Series, una plataforma de redes sociales para compartir y descubrir nuevas series, con funciones de búsqueda y recomendación.",
       "highlights": [
-        "+1 million visits",
-        "Multilanguage",
-        "JavaScript & TypeScript"
+        "Gran base de usuarios",
+        "NestJS & Neo4J",
+        "Envío de correos",
+        "Autenticación"
       ],
-      "url": "https://advent.js/dev",
-      "github": "https://github.com/midudev/codi.link"
+      "url": "https://www.auraseries.com/"
+    },
+    {
+      "name": "Blog Personal",
+      "isActive": true,
+      "description": "Mi blog personal donde comparto mis experiencias y conocimientos sobre desarrollo web, productividad y otros temas interesantes.",
+      "highlights": [
+        "Multidioma",
+        "Optimizado para SEO",
+        "100/100 en Lighthouse",
+        "Preparado para PWA",
+        "Astro"
+      ],
+      "url": "https://blog.ingcapadev.com/es",
+      "github": "https://github.com/INGCapaDev/my-blog"
+    },
+    {
+      "name": "JB Baseball Game",
+      "isActive": true,
+      "description": "Un simulador de juego de béisbol que te permite marcar todas las jugadas disponibles en un juego de béisbol y guardar un registro de las jugadas de los jugadores.",
+      "highlights": [
+        "Orientado a pantalla completa",
+        "Efectos de sonido",
+        "Gestión de estado compleja",
+        "React",
+        "Redux Toolkit"
+      ],
+      "url": "https://baseball-game-react.vercel.app/",
+      "github": "https://github.com/INGCapaDev/baseball-game-react"
     }
   ]
 }

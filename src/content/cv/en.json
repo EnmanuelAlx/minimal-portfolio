@@ -35,7 +35,7 @@
       "position": "Full-Stack Developer",
       "startDate": "2023-10-02",
       "endDate": null,
-      "summary": "Specialized in developing a quoting tool and mastering e-commerce functionalities, I collaborated on designing and implementing various application views and e-commerce interfaces. Additionally, I developed TypeScript scripts to manage our Firebase database at scale. I also designed APIs for comprehensive data collection analytics, implemented artificial intelligence features into a chatbot, and successfully redesigned the checkout process to significantly increase sales conversion rates.",
+      "summary": "Development of a quoting and e-commerce tool for the sale of electrical materials, I collaborated on the design and implementation of various e-commerce views and interfaces. Additionally, I developed TypeScript scripts to manage our Firebase database at scale. I also designed APIs for comprehensive data collection analytics, implemented artificial intelligence features into a chatbot, and successfully redesigned the checkout process to significantly increase sales conversion rates.",
       "highlights": [""],
       "isRemote": true
     },
@@ -179,7 +179,7 @@
         "React",
         "Redux Toolkit"
       ],
-      "url": "https://ingcapadev.com/",
+      "url": "https://baseball-game-react.vercel.app/",
       "github": "https://github.com/INGCapaDev/baseball-game-react"
     }
   ]
