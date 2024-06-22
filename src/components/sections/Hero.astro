@@ -29,8 +29,7 @@ const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-const changeLanguage = Astro.url.href.split('/').pop() == 'es' ? '/' : '/es';
+const redirectURL = lang === 'en' ? '/es' : '/';
 ---
 
 <div class='container'>
@@ -69,7 +68,7 @@ const changeLanguage = Astro.url.href.split('/').pop() == 'es' ? '/' : '/es';
         )
       }
       {
-        profiles.map(({ network, url, username }) => {
+        profiles.map(({ network, url }) => {
           const Icon = SOCIAL_ICONS[network];
           return (
             <a
@@ -82,7 +81,7 @@ const changeLanguage = Astro.url.href.split('/').pop() == 'es' ? '/' : '/es';
           );
         })
       }
-      <a href={changeLanguage} title={t('changeLanguage')}>
+      <a href={redirectURL} title={t('changeLanguage')}>
         <Language />
       </a>
     </footer>

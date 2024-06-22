@@ -10,7 +10,7 @@ const t = useTranslations(lang)
 
 <ul>
   {
-    work.map(({ name, startDate, endDate, position, summary, highlights, isRemote }) => {
+    work.map(({ name, startDate, endDate, position, summary, isRemote }) => {
       const startDateString = new Date(startDate).toLocaleDateString('en-US', {
         month: 'short',
         year: 'numeric',

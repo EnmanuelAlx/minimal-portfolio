@@ -21,15 +21,12 @@ const printInfo = {
   section: t('commands.section.actions'),
 };
 
-const changeLanguage = lang == 'es' ? '/' : '/es';
-
 const languageInfo = {
   id: 'language',
   title: t('commands.language'),
   icon: ICONS.Language,
   hotkey: 'ctrl+C',
   section: t('commands.section.actions'),
-  url: changeLanguage,
 };
 
 const socialInfo = profiles.map(({ network, url }) => {
@@ -94,6 +91,8 @@ const dataInfo = [printInfo, languageInfo, ...socialInfo];
 
     const hotkeypad = new HotKeyPad();
     const footer = document.querySelector('.commands');
+    const getLangURL =
+      window.location.pathname.split('/').pop() === 'es' ? '/' : '/es';
 
     footer?.addEventListener('click', () => {
       var event = new KeyboardEvent('keydown', {
@@ -135,6 +134,12 @@ const dataInfo = [printInfo, languageInfo, ...socialInfo];
             window.scrollTo(0, 0);
             window.print();
           },
+        };
+      }
+      if (id === 'language') {
+        return {
+          ...basics,
+          handler: () => openUrl(getLangURL, urlOptions),
         };
       }
       return {
