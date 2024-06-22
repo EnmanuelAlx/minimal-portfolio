@@ -93,8 +93,6 @@ const dataInfo = [printInfo, languageInfo, ...socialInfo];
 
     const hotkeypad = new HotKeyPad();
     const footer = document.querySelector('.commands');
-    const getLangURL =
-      window.location.pathname.split('/').pop() === 'es' ? '/' : '/es';
 
     footer?.addEventListener('click', () => {
       var event = new KeyboardEvent('keydown', {
