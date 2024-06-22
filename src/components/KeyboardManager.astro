@@ -12,6 +12,7 @@ import { ICONS } from '@/icons/KeyboardIcons';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const redirectURL = lang === 'en' ? '/es' : '/';
 
 const printInfo = {
   id: 'print',
@@ -25,6 +26,7 @@ const languageInfo = {
   id: 'language',
   title: t('commands.language'),
   icon: ICONS.Language,
+  url: redirectURL,
   hotkey: 'ctrl+C',
   section: t('commands.section.actions'),
 };
@@ -134,12 +136,6 @@ const dataInfo = [printInfo, languageInfo, ...socialInfo];
             window.scrollTo(0, 0);
             window.print();
           },
-        };
-      }
-      if (id === 'language') {
-        return {
-          ...basics,
-          handler: () => openUrl(getLangURL, urlOptions),
         };
       }
       return {
