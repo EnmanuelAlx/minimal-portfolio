@@ -14,7 +14,10 @@ export default defineConfig({
     sitemap({
       i18n: {
         defaultLocale: 'en',
-        locales: ['en', 'es'],
+        locales: {
+          en: 'en',
+          es: 'es',
+        },
       },
     }),
     robotsTxt(),
