@@ -6,6 +6,14 @@ const { basics } = data as Resume;
 const { summary } = basics;
 ---
 
-<p>
-  {summary}
-</p>
+<article>
+  {summary.map(({ paragraph }) => <p>{paragraph}</p>)}
+</article>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+</style>

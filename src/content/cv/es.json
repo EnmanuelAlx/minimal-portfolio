@@ -6,7 +6,18 @@
     "email": "ingcapadev@gmail.com",
     "phone": "+52 6692108089",
     "url": "https://ingcapadev.com",
-    "summary": "Apasionado por la tecnología y dedicado a la programación, tengo un fuerte compromiso con el aprendizaje continuo y mantenerme actualizado con las últimas tecnologías emergentes en el campo. He trabajado en entornos de startups, acelerando el desarrollo de startups y colaborando en proyectos de clientes. Mis habilidades proactivas para resolver problemas aseguran una funcionalidad óptima, un diseño impresionante y experiencias de usuario excepcionales. Mi objetivo es hacer la vida de las personas más fácil y emocionante a través de la innovación digital.",
+    "summary": [
+      {
+        "paragraph": "Soy un chico esforzándose por dejar huella en el mundo del desarrollo web bajo el nombre de INGCapaDev. Tengo experiencia en entornos de startups, donde he acelerado el desarrollo y colaborando en proyectos para clientes. Mis habilidades proactivas para resolver problemas aseguran una funcionalidad óptima, un diseño impresionante y experiencias de usuario excepcionales."
+      },
+      {
+        "paragraph": "Impulsado por mi pasión por la productividad, creo herramientas personalizadas para aumentar mi eficiencia, a menudo convirtiéndome en mi propio cliente. Comparto mi trayectoria y conocimientos en mi blog personal, el link se encuentra en la sección de proyectos, fusionando mi amor por el desarrollo web y mi compromiso con la superación personal."
+      },
+      {
+        "paragraph": "Mi objetivo es simplificar y mejorar la vida de las personas a través de la innovación digital, cultivando y expandiendo la marca INGCapaDev, y creando un impacto duradero en la comunidad de desarrollo web."
+      }
+    ],
+
     "location": {
       "city": "Mazatlan",
       "region": "Sinaloa"

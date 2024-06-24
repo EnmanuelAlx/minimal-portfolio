@@ -8,7 +8,11 @@ const resumeSchema = z.object({
     email: z.string(),
     phone: z.string(),
     url: z.string(),
-    summary: z.string(),
+    summary: z.array(
+      z.object({
+        paragraph: z.string(),
+      })
+    ),
     location: z.object({
       city: z.string(),
       region: z.string(),
