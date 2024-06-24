@@ -5,9 +5,10 @@ import '@fontsource-variable/jetbrains-mono';
 import { ViewTransitions } from 'astro:transitions';
 interface Props {
   title: string;
+  noindex?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, noindex } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
@@ -43,6 +44,8 @@ const t = useTranslations(lang);
     <!-- Website to visit when clicked in fb or WhatsApp-->
     <meta property='og:url' content={'https://ingcapadev.com/'} />
     <title>{title}</title>
+
+    {noindex && <meta name='robots' content='noindex,nofollow' />}
 
     <ViewTransitions />
   </head>
