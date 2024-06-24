@@ -18,6 +18,8 @@ A clean, minimalistic, ready to print resume website, where I show my profession
 
 ## ⚓ Lighthouse Score 100/100
 
+![Lighthouse score](https://github.com/INGCapaDev/minimalist-resume/assets/114124075/52fc59c6-4c13-421f-bbc4-2687a160b6b3)
+
 ## 🚀 Getting Started
 
 Clone this repository to your local machine using Git.
