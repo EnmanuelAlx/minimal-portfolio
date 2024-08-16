@@ -60,7 +60,7 @@ const t = useTranslations(lang)
 
   .tag {
     border-radius: 6px;
-    background-color: #eee;
+    background-color: var(--hover-background);
     color: black;
     font-size: 0.75rem;
     font-weight: 500;
@@ -76,13 +76,13 @@ const t = useTranslations(lang)
   article h3 {
     font-weight: 600;
     font-size: 1rem
-    color: #111;
+    color: var(--black-text);
   }
 
   article h4 {
     font-weight: 500;
     font-size: 0.9rem;
-    color: #333;
+    color: var(--darker-primary-text);
   }
 
   header {
@@ -94,7 +94,7 @@ const t = useTranslations(lang)
 
   time {
     font-size: 0.85rem;
-    color: #555;
+    color: var(--darker-primary-text);
   }
 
 @media (max-width: 500px) {

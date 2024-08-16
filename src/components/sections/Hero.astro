@@ -111,7 +111,7 @@ const redirectURL = lang === 'en' ? '/es' : '/';
 <style>
   #web-url {
     margin-top: 8px;
-    color: #555;
+    color: var(--darker-primary-text);
     font-size: 0.7rem;
     text-wrap: pretty;
   }
@@ -138,7 +138,7 @@ const redirectURL = lang === 'en' ? '/es' : '/';
   }
 
   h2 {
-    color: #444;
+    color: var(--secondary-text);
     font-weight: 500;
     font-size: 1rem;
     text-wrap: balance;
@@ -165,11 +165,11 @@ const redirectURL = lang === 'en' ? '/es' : '/';
     align-items: center;
     gap: 0.25rem;
     font-size: 0.85rem;
-    color: #666;
+    color: var(--primary-text);
   }
 
   footer {
-    color: #555;
+    color: var(--darker-primary-text);
     font-size: 0.7rem;
     display: flex;
     gap: 4px;
@@ -178,11 +178,11 @@ const redirectURL = lang === 'en' ? '/es' : '/';
   }
 
   footer a {
-    color: #777;
+    color: var(--soft-primary-text);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #eee;
+    border: 1px solid var(--hover-background);
     padding: 4px;
     height: 32px;
     width: 32px;
@@ -191,8 +191,8 @@ const redirectURL = lang === 'en' ? '/es' : '/';
   }
 
   footer a:hover {
-    background-color: #eee;
-    border: 1px solid #ddd;
+    background-color: var(--hover-background);
+    border: 1px solid var(--darker-hover-background);
   }
 
   @media (max-width: 500px) {

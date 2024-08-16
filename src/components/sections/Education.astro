@@ -4,7 +4,7 @@ import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 
 const { data } = Astro.props;
 const { education } = data as Resume;
-const lang = getLangFromUrl(Astro.url)
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
@@ -52,14 +52,14 @@ const t = useTranslations(lang);
 
   article h3 {
     font-weight: 600;
-    font-size: 1rem
-    color: #111;
+    font-size: 1rem;
+    color: var(--black-text);
   }
 
   article h4 {
     font-weight: 500;
     font-size: 0.9rem;
-    color: #333;
+    color: var(--darker-secondary-text);
   }
 
   header {
@@ -71,15 +71,13 @@ const t = useTranslations(lang);
 
   time {
     font-size: 0.85rem;
-    color: #555;
+    color: var(--darker-primary-text);
   }
 
-  
-@media (max-width: 500px) {
-  
-  header {
-    flex-direction: column;
-    gap: 4px;
+  @media (max-width: 500px) {
+    header {
+      flex-direction: column;
+      gap: 4px;
+    }
   }
-}
 </style>

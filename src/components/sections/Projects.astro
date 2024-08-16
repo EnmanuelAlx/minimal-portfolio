@@ -80,7 +80,7 @@ const t = useTranslations(lang);
 
   article {
     border-radius: 8px;
-    border: 1px solid #f2f2f2;
+    border: 1px solid var(--projects-background);
     gap: 16px;
     display: flex;
     flex-direction: column;
@@ -98,7 +98,7 @@ const t = useTranslations(lang);
   }
 
   article h3 span {
-    color: rgb(72, 197, 104);
+    color: var(--projects-active);
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     margin-left: 2px;
   }
@@ -110,7 +110,7 @@ const t = useTranslations(lang);
   }
 
   article a {
-    color: #111;
+    color: var(--black-text);
   }
 
   article a:hover {
@@ -126,8 +126,8 @@ const t = useTranslations(lang);
 
   footer span {
     border-radius: 6px;
-    background: #eee;
-    color: #444;
+    background: var(--hover-background);
+    color: var(--secondary-text);
     font-size: 0.6rem;
     font-weight: 500;
     padding: 0.2rem 0.6rem;

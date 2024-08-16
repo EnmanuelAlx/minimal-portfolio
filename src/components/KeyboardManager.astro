@@ -168,7 +168,7 @@ const dataInfo = [printInfo, languageInfo, ...socialInfo];
     }
 
     footer .mobile {
-      color: #999;
+      color: var(--kbm-text);
       position: fixed;
       bottom: 15px;
       width: 40px;
@@ -178,8 +178,8 @@ const dataInfo = [printInfo, languageInfo, ...socialInfo];
       align-items: center;
       flex-direction: column;
       border-radius: 100%;
-      background: #fdfdfd;
-      border: 1px solid #eee;
+      background: var(--kbm-background);
+      border: 1px solid var((--kbm-border));
       right: 15px;
       padding: 5px;
     }
@@ -198,8 +198,8 @@ const dataInfo = [printInfo, languageInfo, ...socialInfo];
   }
 
   footer .desktop {
-    background: #fdfdfd;
-    border-top: 1px solid #eee;
+    background: var(--kbm-background);
+    border-top: 1px solid var(--kbm-border);
     position: fixed;
     bottom: 0px;
     width: 100%;
@@ -214,7 +214,7 @@ const dataInfo = [printInfo, languageInfo, ...socialInfo];
   }
 
   footer .desktop kbd {
-    background: #eee;
+    background: var(--kbm-border);
     border-radius: 4px;
     padding: 2px 6px;
     font-size: 14px;
