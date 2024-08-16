@@ -19,3 +19,25 @@
   --kbm-background: #fdfdfd;
   --kbm-border: #eee;
 }
+
+.dark {
+  --background: #111;
+  --hover-background: #eee;
+  --darker-hover-background: #ddd;
+  --soft-primary-text: #777;
+  --primary-text: #666;
+  --darker-primary-text: #555;
+  --secondary-text: #444;
+  --darker-secondary-text: #333;
+  --black-text: #111;
+
+  --projects-background: #f2f2f2;
+  --projects-active: rgb(72, 197, 104);
+
+  --scrollbar-thumb: #767272a6;
+  --scrollbar-thumb-hover: #585858;
+
+  --kbm-text: #999;
+  --kbm-background: #fdfdfd;
+  --kbm-border: #eee;
+}
