@@ -36,6 +36,7 @@ export const ui = {
     'commands.footer.press': 'Press',
     'commands.footer.open': 'to open the command palette',
     'commands.footer.mobile': 'Open the command palette',
+    'commands.toggleTheme': 'Toggle theme',
     changeLanguage: 'Change language',
   },
   es: {
@@ -68,6 +69,7 @@ export const ui = {
     'commands.footer.press': 'Presiona',
     'commands.footer.open': 'para abrir la paleta de comandos',
     'commands.footer.mobile': 'Abrir la paleta de comandos',
+    'commands.toggleTheme': 'Cambiar tema',
     changeLanguage: 'Cambiar idioma',
   },
 } as const;
