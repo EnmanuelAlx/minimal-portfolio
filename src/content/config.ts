@@ -35,7 +35,6 @@ const summarySchema = z.object({});
 // Schema para proyectos
 const projectSchema = z.object({
   name: z.string(),
-  description: z.string(),
   url: z.string().url(),
   highlights: z.array(z.string()),
   github: z.string().url().optional(),
