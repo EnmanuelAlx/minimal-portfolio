@@ -1,9 +1,9 @@
 ---
-import type { Resume } from '@/content/config';
+import type { Education } from '@/content/config';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 
-const { data } = Astro.props;
-const { education } = data as Resume;
+const { education } = Astro.props as { education: Education[] };
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---

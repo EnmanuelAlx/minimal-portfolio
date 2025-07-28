@@ -1,11 +1,14 @@
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
-
 import robotsTxt from 'astro-robots-txt';
 
-// https://astro.build/config
+import tailwindcss from '@tailwindcss/vite';
+
 export default defineConfig({
-  site: 'https://ingcapadev.com',
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  site: 'https://enmanuelalx.com',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es'],
@@ -22,4 +25,9 @@ export default defineConfig({
     }),
     robotsTxt(),
   ],
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+    },
+  },
 });

@@ -1,42 +1,59 @@
 ---
-import type { Resume } from '@/content/config';
+import type { Project } from '@/content/config';
+import { render } from 'astro:content';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import GitHub from '@/icons/GitHub.astro';
 
-const { data } = Astro.props;
-const { projects } = data as Resume;
+const { projects } = Astro.props
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const renderedProjects = await Promise.all(
+  projects.map(async (project: { data: Project }) => {
+    let Content = null;
+
+    try {
+      const { Content: RenderedContent } = await render(project as any);
+      Content = RenderedContent;
+    } catch (error) {
+      console.warn(`Could not render content for project: ${name}`, error);
+    }
+
+    return { Content, ...project.data };
+  })
+);
+
+console.log(renderedProjects)
 ---
 
 <ul>
   {
-    projects.map(({ url, description, highlights, name, isActive, github }) => (
+    renderedProjects.map((project) => (
       <li>
         <article>
           <header>
             <h3>
               <a
-                href={url}
-                title={`${t('projects.link')} ${name}`}
+                href={project.url}
+                title={`${t('projects.link')} ${project.name}`}
                 target='_blank'>
-                {name}
+                {project.name}
               </a>
-              {isActive && <span>&bull;</span>}
-              {github && (
+              {project.isActive && <span>&bull;</span>}
+              {project.github && (
                 <a
                   class='github-code-link'
-                  href={github}
+                  href={project.github}
                   target='_blank'
-                  title={`${t('projects.sourceCode')} ${name}${t('projects.sourceCodeFollowing')}`}>
+                  title={`${t('projects.sourceCode')} ${project.name}${t('projects.sourceCodeFollowing')}`}>
                   <GitHub />
                 </a>
               )}
             </h3>
-            <p>{description}</p>
+            <p><project.Content/></p>
           </header>
           <footer>
-            {highlights.map((highlight) => (
+            {project.highlights.map((highlight: string) => (
               <span>{highlight}</span>
             ))}
           </footer>

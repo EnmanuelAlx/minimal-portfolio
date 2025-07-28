@@ -1,30 +1,30 @@
 ---
-const { data } = Astro.props;
-const { basics } = data as Resume;
-const { name, email, phone, image, label, location, profiles } = basics;
-const { city, region } = location;
 
-import type { Resume } from '@/content/config';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import type { Basics } from '@/content/config';
+import { Image } from 'astro:assets';
+
 import GitHub from '@icons/GitHub.astro';
 import LinkedIn from '@icons/LinkedIn.astro';
 import Mail from '@icons/Mail.astro';
-import Phone from '@icons/Phone.astro';
 import WorldMap from '@icons/WorldMap.astro';
 import Language from '@icons/Language.astro';
-import X from '@icons/X.astro';
+
 import ToggleTheme from '../ToggleTheme.astro';
+
+const { data } = Astro.props;
+
+const { name, email, image, label, location, profiles } = data as Basics;
+const { city, region } = location;
 
 const SOCIAL_ICONS: Record<string, any> = {
   GitHub,
   LinkedIn,
-  X,
 };
 
 const linkedInfo = profiles.find(({ network }) => network === 'LinkedIn');
 const githubInfo = profiles.find(({ network }) => network === 'GitHub');
-
-const printInfo = [email, phone, linkedInfo?.url, githubInfo?.url]
+const printInfo = [email, linkedInfo?.url, githubInfo?.url]
   .filter(Boolean)
   .join(' ● ');
 
@@ -58,17 +58,6 @@ const redirectURL = lang === 'en' ? '/es' : '/';
         )
       }
       {
-        phone && (
-          <a
-            href={`tel:${phone}`}
-            title={`${t('hero.phone')} ${name} ${t('hero.phoneFollowing')} ${phone}`}
-            target='_blank'
-            rel='noopener noreferrer'>
-            <Phone />
-          </a>
-        )
-      }
-      {
         profiles.map(({ network, url }) => {
           const Icon = SOCIAL_ICONS[network];
           return (
@@ -89,7 +78,7 @@ const redirectURL = lang === 'en' ? '/es' : '/';
     </footer>
   </div>
   <figure>
-    <img src={image} alt={name} />
+    <Image src={image} alt={name} width={110} height={110} />
   </figure>
 </div>
 
@@ -155,7 +144,7 @@ const redirectURL = lang === 'en' ? '/es' : '/';
       monospace;
   }
 
-  img {
+  figure img {
     aspect-ratio: 1/ 1;
     object-fit: cover;
     width: 110px;
@@ -208,7 +197,7 @@ const redirectURL = lang === 'en' ? '/es' : '/';
       align-items: center;
     }
 
-    img {
+    figure img {
       width: 90px;
     }
 

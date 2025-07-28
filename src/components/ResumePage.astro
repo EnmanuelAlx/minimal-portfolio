@@ -13,36 +13,62 @@ import Skills from '@/components/sections/Skills.astro';
 import SoftSkills from '@/components/sections/SoftSkills.astro';
 
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
-import { getEntry } from 'astro:content';
+import { getEntry, getCollection } from 'astro:content';
+
 const LANG = getLangFromUrl(Astro.url);
 const t = useTranslations(LANG);
-const entry = await getEntry('cv', LANG);
+
+const entry = await getEntry("cv", LANG);
+const summary = await getEntry("summary", LANG);
+const projects = await getCollection("projects");
+if (!entry) {
+  throw new Error(`CV entry not found for language: ${LANG}`);
+}
 
 const { basics } = entry.data;
+const { education } = entry.data;
 const { name, label } = basics;
+
+// Filtrar entradas por subdirectorio en la colección
+const worksEntries = await getCollection('works', ({ id }) => {
+  return id.startsWith(LANG);
+});
+
+const projectsEntries = projects.filter((project) => {
+  return project.id.startsWith(LANG);
+});
+console.log(projectsEntries)
 ---
 
 <Layout title={`${t('title')} ${name} - ${label}`}>
   <main class='container'>
-    <Section><Hero data={entry.data} /></Section>
-    <Section title={t('section.about')}><About data={entry.data} /></Section>
-    <Section title={t('section.experience')}
-      ><Experience data={entry.data} /></Section
-    >
-    <Section title={t('section.education')}
-      ><Education data={entry.data} /></Section
-    >
-    <Section title={t('section.projects')}
-      ><Projects data={entry.data} /></Section
-    >
-    <Section title={t('section.certifications')}
-      ><Certificates data={entry.data} /></Section
-    >
-    <Section title={t('section.skills')}><Skills data={entry.data} /></Section>
-    <Section title={t('section.softSkills')}
-      ><SoftSkills data={entry.data} /></Section
-    >
+    <Section>
+      <Hero data={basics} />
+    </Section>
+    <Section title={t('section.about')}>
+      <About summary={summary} />
+    </Section>
+    <Section title={t('section.experience')}>
+      <Experience works={worksEntries} />
+    </Section>
+    <Section title={t('section.education')}>
+      <Education education={education} />
+    </Section>
+    <Section title={t('section.projects')}>
+      <Projects projects={projectsEntries} />
+    </Section>
+    <!-- 
+    <Section title={t('section.certifications')}>
+      <Certificates data={entry.data} />
+    </Section>
+    <Section title={t('section.skills')}>
+      <Skills data={entry.data} />
+    </Section>
+    <Section title={t('section.softSkills')}>
+      <SoftSkills data={entry.data} />
+    </Section>
     <KeyboardManager data={entry.data} />
+     -->
   </main>
 </Layout>
 

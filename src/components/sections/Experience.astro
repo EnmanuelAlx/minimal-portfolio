@@ -1,49 +1,80 @@
 ---
-import type { Resume } from '@/content/config';
+import type { CollectionEntry } from 'astro:content';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import { render } from 'astro:content';
 
-const { data } = Astro.props;
-const { work } = data as Resume;
+const { works } = Astro.props as { works: CollectionEntry<'works'>[] };
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
+
+// Renderizar el contenido de cada trabajo de forma asíncrona
+const renderedWorks = await Promise.all(
+  works.map(async (work) => {
+    const { name, startDate, endDate, position, isRemote } = work.data;
+    const startDateString = new Date(startDate).toLocaleDateString('en-US', {
+      month: 'short',
+      year: 'numeric',
+    });
+    const endDateString = endDate
+      ? new Date(endDate).toLocaleDateString('en-US', {
+          month: 'short',
+          year: 'numeric',
+        })
+      : t('currentDateString');
+    
+    // Renderizar el contenido si existe
+    let Content = null;
+    try {
+      const { Content: RenderedContent } = await render(work);
+      Content = RenderedContent;
+    } catch (error) {
+      console.warn(`Could not render content for work: ${name}`, error);
+    }
+
+    return {
+      name,
+      position,
+      isRemote,
+      startDateString,
+      endDateString,
+      Content,
+      startDate // Mantener la fecha original para ordenamiento
+    };
+  })
+);
+
+// Ordenar por fecha de inicio: más reciente primero
+const sortedWorks = renderedWorks.sort((a, b) => {
+  return new Date(b.startDate).getTime() - new Date(a.startDate).getTime();
+});
+
 ---
 
 <ul>
   {
-    work.map(({ name, startDate, endDate, position, summary, isRemote }) => {
-      const startDateString = new Date(startDate).toLocaleDateString('en-US', {
-        month: 'short',
-        year: 'numeric',
-      });
-      const endDateString = endDate
-        ? new Date(endDate).toLocaleDateString('en-US', {
-            month: 'short',
-            year: 'numeric',
-          })
-        : t('currentDateString');
-      return (
-        <li>
-          <article>
-            <header>
-              <div>
-                <div class="name">
-                <h3>{name}</h3>
-                {isRemote && <span class="tag">{t('remoteString')}</span>}  
-                </div>
-                <h4>{position}</h4>
+    sortedWorks.map((work) => (
+      <li>
+        <article>
+          <header>
+            <div>
+              <div class="name">
+                <h3>{work.name}</h3>
+                {work.isRemote && <span class="tag">{t('remoteString')}</span>}  
               </div>
-              <time>
-                {startDateString} - {endDateString}
-              </time>
-            </header>
-            <footer>
-              {' '}
-              <p>{summary}</p>
+              <h4>{work.position}</h4>
+            </div>
+            <time>
+              {work.startDateString} - {work.endDateString}
+            </time>
+          </header>
+          {work.Content && (
+            <footer class="prose max-w-none">
+              <work.Content />
             </footer>
-          </article>
-        </li>
-      );
-    })
+          )}
+        </article>
+      </li>
+    ))
   }
 </ul>
 

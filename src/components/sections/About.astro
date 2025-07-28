@@ -1,13 +1,13 @@
 ---
-import type { Resume } from '@/content/config';
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
 
-const { data } = Astro.props;
-const { basics } = data as Resume;
-const { summary } = basics;
+const summary = Astro.props.summary as CollectionEntry<'summary'>;
+const { Content } = await render(summary);
 ---
 
-<article>
-  {summary.map(({ paragraph }) => <p>{paragraph}</p>)}
+<article class="prose max-w-none">
+  <Content />
 </article>
 
 <style>
