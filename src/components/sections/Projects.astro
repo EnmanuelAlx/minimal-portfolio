@@ -23,14 +23,13 @@ const renderedProjects = await Promise.all(
   })
 );
 
-console.log(renderedProjects)
 ---
 
-<ul>
+<ul class="projects-grid">
   {
     renderedProjects.map((project) => (
-      <li>
-        <article>
+      <li class="flex justify-center items-center">
+        <article class="w-full max-w-sm">
           <header>
             <h3>
               <a
@@ -64,6 +63,79 @@ console.log(renderedProjects)
 </ul>
 
 <style>
+  /* Grid dinámico basado en la cantidad de elementos */
+  .projects-grid {
+    display: grid;
+    gap: 12px;
+    place-items: center;
+    margin-inline: -16px;
+  }
+
+  /* 1 proyecto - una sola columna centrada */
+  .projects-grid li:first-child:nth-last-child(1) {
+    grid-column: 1;
+  }
+  .projects-grid:has(li:first-child:nth-last-child(1)) {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  /* 2 proyectos - dos columnas */
+  .projects-grid li:first-child:nth-last-child(2),
+  .projects-grid li:first-child:nth-last-child(2) ~ li {
+    display: flex;
+  }
+  .projects-grid:has(li:first-child:nth-last-child(2)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 3 proyectos - tres columnas */
+  .projects-grid li:first-child:nth-last-child(3),
+  .projects-grid li:first-child:nth-last-child(3) ~ li {
+    display: flex;
+  }
+  .projects-grid:has(li:first-child:nth-last-child(3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Más de 3 proyectos - máximo 3 columnas */
+  .projects-grid:has(li:nth-child(4)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Responsive para 2 proyectos */
+  @media (max-width: 640px) {
+    .projects-grid:has(li:first-child:nth-last-child(2)) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Responsive para 3 proyectos */
+  @media (max-width: 768px) {
+    .projects-grid:has(li:first-child:nth-last-child(3)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .projects-grid:has(li:first-child:nth-last-child(3)) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Responsive para más de 3 proyectos */
+  @media (max-width: 768px) {
+    .projects-grid:has(li:nth-child(4)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .projects-grid:has(li:nth-child(4)) {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .github-code-link {
     display: inline-flex;
     align-items: center;
@@ -76,13 +148,6 @@ console.log(renderedProjects)
 
   .github-code-link:hover {
     transform: scale(1.1);
-  }
-
-  ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-inline: -16px;
   }
 
   @keyframes pulse {

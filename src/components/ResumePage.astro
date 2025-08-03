@@ -37,7 +37,6 @@ const worksEntries = await getCollection('works', ({ id }) => {
 const projectsEntries = projects.filter((project) => {
   return project.id.startsWith(LANG);
 });
-console.log(projectsEntries)
 ---
 
 <Layout title={`${t('title')} ${name} - ${label}`}>
