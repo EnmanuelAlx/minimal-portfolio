@@ -11,14 +11,8 @@ const t = useTranslations(lang);
 const renderedProjects = await Promise.all(
   projects.map(async (project: { data: Project }) => {
     let Content = null;
-
-    try {
-      const { Content: RenderedContent } = await render(project as any);
-      Content = RenderedContent;
-    } catch (error) {
-      console.warn(`Could not render content for project: ${name}`, error);
-    }
-
+    const { Content: RenderedContent } = await render(project as any);
+    Content = RenderedContent;
     return { Content, ...project.data };
   })
 );
