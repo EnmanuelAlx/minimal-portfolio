@@ -8,7 +8,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://enmanuelalx.com',
+  site: process.env.SITE_URL || 'https://enmanuelalx.com',
+  base: '/minimal-portfolio',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es'],
