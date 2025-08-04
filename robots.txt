@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://enmanuelalx.com/sitemap-index.xml
