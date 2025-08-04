@@ -9,7 +9,6 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   site: process.env.SITE_URL || 'https://enmanuelalx.com',
-  base: '/minimal-portfolio/',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es'],

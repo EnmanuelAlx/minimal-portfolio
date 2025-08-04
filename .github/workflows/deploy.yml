@@ -30,7 +30,7 @@ jobs:
       - name: Build
         run: pnpm build
         env:
-          SITE_URL: https://enmanuelalx.github.io/minimal-portfolio
+          SITE_URL: https://enmanuelalx.com
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
