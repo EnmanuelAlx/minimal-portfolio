@@ -1,8 +1,7 @@
 ---
 import type { Resume } from '@/content/config';
 
-const { data } = Astro.props;
-const { skills } = data as Resume;
+const { skills } = Astro.props as { skills: Skill[] };
 ---
 
 <ul>

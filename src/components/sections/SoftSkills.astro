@@ -1,8 +1,7 @@
 ---
-import type { Resume } from '@/content/config';
+import type { SoftSkill } from '@/content/config';
 
-const { data } = Astro.props;
-const { softskills } = data as Resume;
+const { softskills } = Astro.props as { softskills: SoftSkill[] };
 ---
 
 <ul>

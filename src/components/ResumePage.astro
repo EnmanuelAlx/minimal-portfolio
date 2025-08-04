@@ -28,7 +28,10 @@ if (!entry) {
 const { basics } = entry.data;
 const { education } = entry.data;
 const { name, label } = basics;
+const { certificates } = entry.data;
+const { skills } = entry.data;
 
+const { softskills } = entry.data;
 // Filtrar entradas por subdirectorio en la colección
 const worksEntries = await getCollection('works', ({ id }) => {
   return id.startsWith(LANG);
@@ -56,16 +59,16 @@ const projectsEntries = projects.filter((project) => {
     <Section title={t('section.projects')}>
       <Projects projects={projectsEntries} />
     </Section>
-    <!-- 
     <Section title={t('section.certifications')}>
-      <Certificates data={entry.data} />
+      <Certificates certificates={certificates} />
     </Section>
     <Section title={t('section.skills')}>
-      <Skills data={entry.data} />
+      <Skills skills={skills} />
     </Section>
     <Section title={t('section.softSkills')}>
-      <SoftSkills data={entry.data} />
+      <SoftSkills softskills={ softskills } />
     </Section>
+    <!-- 
     <KeyboardManager data={entry.data} />
      -->
   </main>

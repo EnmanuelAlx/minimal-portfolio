@@ -1,16 +1,20 @@
 ---
-import type { Resume } from '@/content/config';
+import type { Certificate } from '@/content/config';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 
-const { data } = Astro.props;
-const { certificates } = data as Resume;
+const { certificates } = Astro.props as { certificates: Certificate[] };
+
+const sortedCertificates = certificates.sort((a, b) => {
+  return new Date(b.date).getTime() - new Date(a.date).getTime();
+});
+
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang);
 ---
 
 <ul>
   {
-    certificates.map(({date, name,url, organization }) => {
+    sortedCertificates.map(({date, name,url, organization }) => {
       const dateString = new Date(date).toLocaleDateString('en-US', {
         month: 'short',
         year: 'numeric',

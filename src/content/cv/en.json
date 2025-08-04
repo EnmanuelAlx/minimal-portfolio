@@ -12,13 +12,13 @@
     "profiles": [
       {
         "network": "GitHub",
-        "username": "ingcapadev",
-        "url": "https://github.com/ingcapadev"
+        "username": "enmanuelalx",
+        "url": "https://github.com/enmanuelalx"
       },
       {
         "network": "LinkedIn",
-        "username": "ingcapadev",
-        "url": "https://www.linkedin.com/in/ingcapadev/"
+        "username": "enmanuel-madrid/",
+        "url": "https://www.linkedin.com/in/enmanuel-madrid/"
       }
     ]
   },
@@ -32,65 +32,68 @@
   ],
   "certificates": [
     {
-      "name": "Building Neo4j Applications with TypeScript",
-      "date": "2024-01-26",
-      "organization": "Neo4j GraphAcademy",
-      "url": "https://graphacademy.neo4j.com/c/39a38074-f78a-4476-b185-224f6280781e/"
+      "name": "Introduction to hacking",
+      "date": "2025-06-01",
+      "organization": "Hack4u",
+      "url": "https://drive.google.com/file/d/1-k2BTC9P7GoZ4Mio7vv12ewLh5-aDCgS/view?usp=drive_link"
     },
     {
-      "name": "Introduction to Web Development II",
-      "date": "2021-12-02",
-      "organization": "Google, Universidad de Alicante",
-      "url": "https://drive.google.com/file/d/16Q-7lxWhN3X8MnIWxV7z1I9OXaTXugwz/view?usp=sharing"
+      "name": "Artificial Intelligence",
+      "date": "2018-04-01",
+      "organization": "Platzi",
+      "url": "https://drive.google.com/file/d/12Q-Mefrs_T9bL-5bdrywNn5FR0vvb7ku/view?usp=drive_link"
     },
     {
-      "name": "Introduction to Web Development I",
-      "date": "2021-11-25",
-      "organization": "Google, Universidad de Alicante",
-      "url": "https://drive.google.com/file/d/1D2yXuSt64IOwhvCbvreHXzRkIfhW3IGu/view?usp=sharing"
+      "name": "Leadership",
+      "date": "2018-09-01",
+      "organization": "Platzi",
+      "url": "https://drive.google.com/file/d/1Ght3W_Q71wydbvCBcrtZoM3wIodcEw6T/view?usp=drive_link"
     }
   ],
   "skills": [
     {
-      "name": "HTML"
-    },
-    {
-      "name": "CSS / Tailwind CSS"
-    },
-    {
-      "name": "JavaScript / TypeScript"
-    },
-    {
-      "name": "Git / GitHub"
-    },
-    {
-      "name": "Node.js / Express.js / NestJS"
-    },
-    {
-      "name": "SQL / SQLite / Drizzle"
-    },
-    {
-      "name": "Firebase"
-    },
-    {
-      "name": "Neo4J"
-    },
-    {
-      "name": "React / Next.js"
-    },
-    {
-      "name": "Astro"
+      "name": "Python"
     },
     {
       "name": "Docker"
     },
     {
-      "name": "Cloudflare / Vercel / Google Cloud"
+      "name": "Cloud"
+    },
+    {
+      "name": "Django / Flask / FastAPI"
+    },
+    {
+      "name": "IA"
+    },
+    {
+      "name": "Prompt Engineering"
+    },
+    {
+      "name": "JavaScript / TypeScript"
+    },
+    {
+      "name": "Node / Express"
+    },
+    {
+      "name": "SQL / NoSQL"
+    },
+    {
+      "name": "PHP"
+    },
+    {
+      "name": "Laravel"
+    },
+    {
+      "name": "Vue"
+    },
+    {
+      "name": "Astro"
     }
   ],
   "softskills": [
     {
-      "name": "Problem-solving"
+      "name": "Problem solving"
     },
     {
       "name": "Communication"
@@ -105,13 +108,25 @@
       "name": "Critical thinking"
     },
     {
-      "name": "Growth mindset"
-    },
-    {
-      "name": "Time management"
-    },
-    {
       "name": "Innovation"
+    },
+    {
+      "name": "Adaptability"
+    },
+    {
+      "name": "Self-taught"
+    },
+    {
+      "name": "Attention to detail"
+    },
+    {
+      "name": "Project management"
+    },
+    {
+      "name": "Team management"
+    },
+    {
+      "name": "Quality orientation"
     }
   ]
 }
