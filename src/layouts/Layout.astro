@@ -21,20 +21,27 @@ const t = useTranslations(lang);
     <meta name='generator' content={Astro.generator} />
     <meta name='description' content={t('description')} />
     <meta name='viewport' content='width=device-width' />
-    <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
-    <link rel='icon' href='/favicon.ico' type='image/x-icon' />
-    <link rel='stylesheet' href='/css/variables.css' />
+    <!-- Favicon -->
+    <link rel='icon' type='image/png' href='/favicon-96x96.png' sizes='96x96' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='shortcut icon' href='/favicon.ico' />
+    <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+    <meta name='apple-mobile-web-app-title' content='EnmanuelAlx' />
+    <link rel='manifest' href='/site.webmanifest' />
+
     <!-- meta OG -->
     <meta property='og:site_name' content={title} />
     <meta property='og:title' content={title} />
     <meta property='og:description' content={t('description')} />
-
+    
+    <link rel='stylesheet' href='/css/variables.css' />
+  
     <!-- Image to display -->
     <meta
       property='og:image'
-      content='https://ingcapadev.com/favicon-512x512.png'
+      content='https://enmanuelalx.com/favicon-512x512.png'
     />
-
+    <meta property='og:image:alt' content='Enmanuel Madrid' />
     <!-- No need to change anything here -->
     <meta property='og:type' content='website' />
     <meta property='og:image:type' content='image/jpeg' />
@@ -44,7 +51,7 @@ const t = useTranslations(lang);
     <meta property='og:image:height' content='300' />
 
     <!-- Website to visit when clicked in fb or WhatsApp-->
-    <meta property='og:url' content={'https://ingcapadev.com/'} />
+    <meta property='og:url' content={'https://enmanuelalx.com/'} />
     <title>{title}</title>
 
     {noindex && <meta name='robots' content='noindex,nofollow' />}

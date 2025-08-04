@@ -19,7 +19,7 @@ A clean, minimalistic, ready to print resume website, where I show my profession
 - ✅ Customizable without code
 - ✅ Robots.txt
 - ✅ Sitemap
-- ⚒️ Dark Mode (Coming soon)
+- ✅ Dark Mode
 
 ## ⚓ Lighthouse Score 100/100
 
