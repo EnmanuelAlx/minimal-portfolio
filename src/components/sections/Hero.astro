@@ -71,14 +71,14 @@ const redirectURL = lang === 'en' ? '/es' : '/';
           );
         })
       }
-      <a href={redirectURL} title={t('changeLanguage')}>
+      <a href={redirectURL} title={t('changeLanguage')} aria-label={t('changeLanguage')}>
         <Language />
       </a>
       <ToggleTheme />
     </footer>
   </div>
   <figure>
-    <Image src={image} alt={name} width={110} height={110} />
+    <Image src={image} alt={name} width={110} height={110} loading="eager" />
   </figure>
 </div>
 
