@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Enmanuel Madrid",
-    "label": "Tech lead with a Backend focus, specializing in web development and dedicated to creating impactful and functional digital experiences",
+    "label": "Tech lead with a Backend focus, passionate about challenges and well-coded humor",
     "image": "/me.webp",
     "email": "hey@enmanuelalx.com",
     "url": "https://enmanuelalx.com",
@@ -24,8 +24,8 @@
   },
   "education": [
     {
-      "institution": "Universidad Católica Andrés Bello",
-      "area": "Ingeniería en Informática",
+      "institution": "Catholic University of Andrés Bello",
+      "area": "Computer Engineering",
       "startDate": "2014-09-01",
       "endDate": "2020-02-01"
     }
